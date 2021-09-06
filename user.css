@@ -1,0 +1,31 @@
+section#newuser{
+  position: center;
+  width:auto;
+}
+section#content {
+    color: white;
+    position: absolute;
+    top: 400px;
+    left: 600px;
+
+}
+
+img#slide {
+    width: 100%;
+    height: auto;
+}
+footer {
+    width: 100%;
+    height: 80px;
+    background: #172035;
+    position: absolute;
+    top: 1000px;
+    left: 0;
+}
+
+p#footer {
+    text-align: center;
+    color: white;
+    margin-top: 32px;
+    font-size: 1em;
+}

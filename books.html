@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>KRMU | Books</title>
+
+	<!-- Start Normalize CSS -->
+	<link rel="stylesheet" type="text/css" href="css/normalize.css">
+
+	<!-- Start Custom CSS -->
+	<link rel="stylesheet" type="text/css" href="css/books.css">
+
+	<!-- Start Global CSS -->
+	<link rel="stylesheet" type="text/css" href="css/global.css">
+
+
+
+</head>
+<body>
+
+	<header>
+
+		<img id="logo" src="img/logo.png">
+
+		<nav>
+			<a href="index.html">Home</a>
+			<a href="about.html">About Us</a>
+			<a href="complaint.html">Complaint</a>
+			<a href="contact.html">Contact Us</a>
+			<a href="books.html">Books</a>
+		</nav>
+
+	</header>
+
+	<form>
+
+
+		<label for="fname"><b>YOUR NAME</b></label><br>
+
+		<input id="name" type="text" name="your name" value="">
+
+		<br>
+		<br>
+
+		<label for="roll_number"><b>YOUR ROLL NUMBER:</b></label>
+		<style media="screen">
+			form{
+				background-color: transparent;
+			}
+		</style>
+		<br>
+
+
+
+
+		<input id="roll_number" type="text" name="your roll number" value="">
+		<br>
+		<br>
+
+
+			<label for="select"><b>ENTER COURSE</b></label>
+			<br>
+
+			<select id= "course" class="choose" name="choose">
+				<option value="">Select course</option>
+				<option value="BTECH">BTECH</option>
+				<option value="BSC">BSC</option>
+				<option value="BBA">BBA</option>
+				<option value="BCA">BCA</option>
+				<option value="MCA">MCA</option>
+				<option value="MTECH">MTECH</option>
+				<option value="B.PHARMA">B.PHARMA</option>
+				<option value="D.PHARMA">D.PHARMA</option>
+
+			</select>
+			<br>
+			<br>
+			<label for="select"><b>SELECT BOOKS</b></label>
+			<br>
+
+			<select id= "books" class="choose" name="choose">
+				<option value="">Select Book</option>
+				<option value="BTECH">XYZ</option>
+				<option value="BSC">TE</option>
+				<option value="BBA">AB</option>
+				<option value="BCA">xyz</option>
+				<option value="MCA">xyz</option>
+				<option value="MTECH">xyz</option>
+				<option value="B.PHARMA">xyz</option>
+				<option value="D.PHARMA">xyz</option>
+
+			</select>
+			<br>
+			<br>
+			<label for="select"><b>DATE OF ISSUE</b></label>
+			<br>
+			<input type="date" name="" value="">
+			<br>
+			<br>
+			<input type="submit" value="Submit" onClick= "book()">
+
+
+			</form>
+		</section>
+		<img id="slide" src="img/books.png">
+	</section>
+    <footer>
+
+
+  		<img id="logo" src="img/logo.png">
+
+  		<p id="footer">© Copyright 2021. All Rights Reserved. | KRMU</p>
+
+  	</footer>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		function book() {
+			var name = document.getElementById("name").value;
+			var roll_number = document.getElementById("roll_number").value;
+			var course = document.getElementById("course").value;
+			var books = document.getElementById("books").value;
+			$.get("http://127.0.0.1:8000/me/book/", {name:name,rollnumber:roll_number,courses:course,book:books}, function (data, status) {
+				console.log(data)
+			}).fail(function (data) {
+				console.log("Somethng went wrong")
+			})
+
+
+		}
+	</script>
+
+  </body>
+  </html>
